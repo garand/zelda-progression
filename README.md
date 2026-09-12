@@ -54,7 +54,7 @@ railway up
 ## Brand
 
 - Ink `#0B140C` · Forest `#1B5E20` · Triforce gold `#D4AF37` · Cream text  
-- Headings: **Cinzel** · Body: **Source Sans 3** (GitHub Fonts)
+- Headings: **Cinzel** · Body: **Source Sans 3** (Google Fonts)
 
 ## Disclaimer
 
