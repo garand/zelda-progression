@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Anthony’s curated Switch → Switch 2 Zelda series progression tracker — interactive checklist, official chronology, and connected pairs."
+    />
+    <meta name="theme-color" content="#0B140C" />
+    <title>Zelda Progression Tracker — Switch → Switch 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpolygon points='50,5 65,32 35,32' fill='%23D4AF37'/%3E%3Cpolygon points='20,58 35,85 5,85' fill='%23D4AF37'/%3E%3Cpolygon points='80,58 95,85 65,85' fill='%23D4AF37'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Zelda Progression home">
+          <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+            <polygon points="50,5 65,32 35,32" fill="#D4AF37" />
+            <polygon points="20,58 35,85 5,85" fill="#D4AF37" />
+            <polygon points="80,58 95,85 65,85" fill="#D4AF37" />
+          </svg>
+          <span>Zelda Path</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="#path">Path</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#connections">Connections</a></li>
+            <li><a href="#optional">Optional</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <div id="top" class="hero">
+        <svg class="hero-triforce" viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+          <polygon points="50,5 65,32 35,32" fill="#D4AF37" />
+          <polygon points="20,58 35,85 5,85" fill="#D4AF37" />
+          <polygon points="80,58 95,85 65,85" fill="#D4AF37" />
+        </svg>
+        <h1>Zelda Progression Tracker</h1>
+        <p class="tagline">
+          Anthony’s curated Switch → Switch 2 play order — foundations now, then the Switch&nbsp;2 era,
+          with chronology context and connected pairs.
+        </p>
+
+        <div class="progress-panel" aria-live="polite">
+          <div class="progress-ring" role="img" aria-label="Hero path completion percent">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <circle class="track" cx="30" cy="30" r="26" />
+              <circle
+                class="fill"
+                id="progress-ring-fill"
+                cx="30"
+                cy="30"
+                r="26"
+                stroke-dasharray="163.36"
+                stroke-dashoffset="163.36"
+              />
+            </svg>
+            <div class="pct" id="progress-pct">0%</div>
+          </div>
+          <div class="progress-meta">
+            <strong>Hero path progress</strong>
+            <span id="progress-detail">Loading…</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" aria-hidden="true">
+              <i id="progress-bar-fill"></i>
+            </div>
+          </div>
+          <div class="progress-actions">
+            <button type="button" class="btn" id="btn-export">Export</button>
+            <button type="button" class="btn btn-danger" id="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PATH -->
+      <div id="path">
+        <div id="path-sections">
+          <!-- filled by app.js -->
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <section id="timeline" aria-labelledby="timeline-title">
+        <div class="section-head">
+          <h2 id="timeline-title">Official chronology</h2>
+        </div>
+        <p class="section-sub">
+          Skyward → Minish → Four Swords → Ocarina of Time, then the three branches. BotW → TotK sit at
+          the far end of history.
+        </p>
+
+        <div class="callout" id="why-not-pure">
+          <!-- filled by app.js -->
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-trunk" id="timeline-trunk"></div>
+          <div class="tl-branches" id="timeline-branches"></div>
+          <div class="tl-future" id="timeline-future"></div>
+        </div>
+      </section>
+
+      <!-- CONNECTIONS -->
+      <section id="connections" aria-labelledby="connections-title">
+        <div class="section-head">
+          <h2 id="connections-title">Connected pairs</h2>
+        </div>
+        <p class="section-sub">
+          Play these in order when you can — sequels and spiritual follow-ups that reward continuity.
+        </p>
+        <div class="conn-grid" id="connections-grid"></div>
+      </section>
+
+      <!-- OPTIONAL -->
+      <section id="optional" aria-labelledby="optional-title">
+        <div class="section-head">
+          <h2 id="optional-title">Later / Optional</h2>
+        </div>
+        <p class="section-sub" id="optional-sub">
+          Worth knowing for completionists — not required for the Switch → Switch&nbsp;2 hero path.
+        </p>
+        <div class="game-grid" id="optional-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <svg class="triforce-mini" viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+        <polygon points="50,5 65,32 35,32" fill="#D4AF37" />
+        <polygon points="20,58 35,85 5,85" fill="#D4AF37" />
+        <polygon points="80,58 95,85 65,85" fill="#D4AF37" />
+      </svg>
+      <p>
+        Fan project by Anthony · Not affiliated with Nintendo.<br />
+        The Legend of Zelda and related marks are trademarks of Nintendo.<br />
+        Cover images via Wikimedia / Wikipedia for identification; progress saved in your browser
+        (<code>zelda-progression-v1</code>).
+      </p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
