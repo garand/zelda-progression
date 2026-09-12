@@ -1,8 +1,8 @@
 # Zelda Progression Tracker
 
-Polished fan site for Anthony’s curated **Switch → Switch 2** Zelda play order: interactive checklist, official chronology visual, and connected pairs.
+Fan site for Anthony’s **final Switch → Switch 2 Zelda path**: numbered hero progression (1→10), Reddit-style verdict board, skip & later buckets, plus demoted chronology and connections.
 
-Pure static HTML/CSS/JS — no build step. Progress is stored in `localStorage` under key **`zelda-progression-v1`**.
+Pure static HTML/CSS/JS — no build step. Progress is stored in `localStorage` under key **`zelda-progression-v2`**.
 
 ## Local preview
 
@@ -14,25 +14,30 @@ python3 -m http.server 8080
 # → http://localhost:8080
 ```
 
-## Hero path (recommended order)
+## Your final path (hero 1–10)
 
-**Phase 1 — Now on Switch**
+**Now on Switch**
 
-1. A Link to the Past (SNES NSO) — play  
-2. The Minish Cap (GBA NSO+) — recommended optional  
-3. Skyward Sword HD — essential-ish  
+1. A Link to the Past — SNES Classics — PLAY  
+2. Minish Cap — GBA Classics — optional but worthwhile (Recommended)  
+3. Skyward Sword HD — Switch — Essential-ish  
 
-**Phase 2 — Switch 2**
+**Switch 2**
 
-4. Link’s Awakening remake (enhanced) — play  
-5. Ocarina of Time Switch 2 remake (Nov 5, 2026) — essential · WAIT  
-6. Majora’s Mask (N64 Classics) — play  
-7. Wind Waker (GameCube Classics) — essential  
-8. Twilight Princess — essential but blocked (no Switch release yet)  
-9. Breath of the Wild Switch 2 Edition — essential  
-10. Tears of the Kingdom Switch 2 Edition — essential (right after BotW)
+4. Link’s Awakening remake — Switch 2 enhanced — PLAY  
+5. Ocarina of Time — Switch 2 remake (Nov 5, 2026) — ESSENTIAL · WAIT  
+6. Majora’s Mask — N64 Classics — PLAY  
+7. Wind Waker — GameCube Classics — ESSENTIAL  
+8. Twilight Princess — wait/revisit availability — ESSENTIAL but blocked  
+9. Breath of the Wild — Switch 2 Edition — ESSENTIAL  
+10. Tears of the Kingdom — Switch 2 Edition — ESSENTIAL (immediately after BotW)
 
-Plus a Later/Optional section (Oracles, Echoes of Wisdom, Zelda I/II, multiplayer skips, DS titles, ALBW).
+## Sections
+
+- **Path** — vertical numbered flow with checklist (only 1–10 count toward hero %)  
+- **Verdicts** — full series board with filters (All / Essential+Play / Skip / Optional)  
+- **Skip & later** — hard skips · only if hooked · worth it later (EoW, ALBW)  
+- **Timeline** / **Connections** — context, demoted below the path & verdicts  
 
 ## Deploy on Railway
 
@@ -49,7 +54,7 @@ railway up
 ## Brand
 
 - Ink `#0B140C` · Forest `#1B5E20` · Triforce gold `#D4AF37` · Cream text  
-- Headings: **Cinzel** · Body: **Source Sans 3** (Google Fonts)
+- Headings: **Cinzel** · Body: **Source Sans 3** (GitHub Fonts)
 
 ## Disclaimer
 
