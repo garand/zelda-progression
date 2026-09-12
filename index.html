@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Anthony’s curated Switch → Switch 2 Zelda series progression tracker — interactive checklist, official chronology, and connected pairs."
+      content="Anthony’s final Switch → Switch 2 Zelda path — numbered 1–10 progression, Reddit-style verdicts, skips & later, chronology."
     />
     <meta name="theme-color" content="#0B140C" />
-    <title>Zelda Progression Tracker — Switch → Switch 2</title>
+    <title>Your Final Zelda Path — Switch → Switch 2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +26,7 @@
 
     <header class="site-header">
       <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Zelda Progression home">
+        <a class="brand" href="#top" aria-label="Zelda Path home">
           <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
             <polygon points="50,5 65,32 35,32" fill="#D4AF37" />
             <polygon points="20,58 35,85 5,85" fill="#D4AF37" />
@@ -37,9 +37,10 @@
         <nav aria-label="Primary">
           <ul class="nav-links">
             <li><a href="#path">Path</a></li>
+            <li><a href="#verdicts">Verdicts</a></li>
+            <li><a href="#skip-later">Skip &amp; later</a></li>
             <li><a href="#timeline">Timeline</a></li>
             <li><a href="#connections">Connections</a></li>
-            <li><a href="#optional">Optional</a></li>
           </ul>
         </nav>
       </div>
@@ -52,11 +53,18 @@
           <polygon points="20,58 35,85 5,85" fill="#D4AF37" />
           <polygon points="80,58 95,85 65,85" fill="#D4AF37" />
         </svg>
-        <h1>Zelda Progression Tracker</h1>
+        <p class="hero-kicker">Final ChatGPT landing</p>
+        <h1>Your final path</h1>
         <p class="tagline">
-          Anthony’s curated Switch → Switch 2 play order — foundations now, then the Switch&nbsp;2 era,
-          with chronology context and connected pairs.
+          The numbered Switch → Switch&nbsp;2 order you landed on — with every series
+          verdict, clear skips, and what to play later.
         </p>
+
+        <div class="era-flow" aria-hidden="true">
+          <span class="era-pill era-switch">Now on Switch</span>
+          <span class="era-arrow">→</span>
+          <span class="era-pill era-switch2">Switch 2</span>
+        </div>
 
         <div class="progress-panel" aria-live="polite">
           <div class="progress-ring" role="img" aria-label="Hero path completion percent">
@@ -75,7 +83,7 @@
             <div class="pct" id="progress-pct">0%</div>
           </div>
           <div class="progress-meta">
-            <strong>Hero path progress</strong>
+            <strong>Hero path 1–10</strong>
             <span id="progress-detail">Loading…</span>
           </div>
           <div class="progress-bar-wrap">
@@ -90,26 +98,59 @@
         </div>
       </div>
 
-      <!-- PATH -->
-      <div id="path">
-        <div id="path-sections">
+      <!-- PATH: vertical numbered 1→10 -->
+      <section id="path" aria-labelledby="path-title">
+        <div class="section-head">
+          <h2 id="path-title">Numbered progression</h2>
+        </div>
+        <p class="section-sub">
+          One vertical path — not a card grid. Check off steps as you go; only these ten
+          count toward hero %.
+        </p>
+        <div id="path-flow"><!-- filled by app.js --></div>
+      </section>
+
+      <!-- VERDICTS -->
+      <section id="verdicts" aria-labelledby="verdicts-title">
+        <div class="section-head">
+          <h2 id="verdicts-title">Verdict board</h2>
+        </div>
+        <p class="section-sub">
+          Reddit-style scan of every major series game — verdict, why, and the version to play.
+        </p>
+        <div class="verdict-filters" role="group" aria-label="Filter verdicts">
+          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="core">Essential + Play</button>
+          <button type="button" class="filter-btn" data-filter="skip">Skip</button>
+          <button type="button" class="filter-btn" data-filter="optional">Optional</button>
+        </div>
+        <div class="verdict-board" id="verdict-board" role="table" aria-label="Series verdicts">
           <!-- filled by app.js -->
         </div>
-      </div>
+      </section>
 
-      <!-- TIMELINE -->
-      <section id="timeline" aria-labelledby="timeline-title">
+      <!-- SKIP & LATER -->
+      <section id="skip-later" aria-labelledby="skip-later-title">
+        <div class="section-head">
+          <h2 id="skip-later-title">Skip &amp; later</h2>
+        </div>
+        <p class="section-sub">
+          Hard skips vs “only if hooked” vs recommended-but-not-on-the-numbered-path.
+          Trackable, but they don’t count toward hero %.
+        </p>
+        <div id="skip-later-sections"><!-- filled by app.js --></div>
+      </section>
+
+      <!-- TIMELINE (demoted) -->
+      <section id="timeline" aria-labelledby="timeline-title" class="demoted-section">
         <div class="section-head">
           <h2 id="timeline-title">Official chronology</h2>
         </div>
         <p class="section-sub">
-          Skyward → Minish → Four Swords → Ocarina of Time, then the three branches. BotW → TotK sit at
-          the far end of history.
+          Context only — the play order above is not pure timeline order.
         </p>
 
-        <div class="callout" id="why-not-pure">
-          <!-- filled by app.js -->
-        </div>
+        <div class="callout" id="why-not-pure"></div>
 
         <div class="timeline">
           <div class="timeline-trunk" id="timeline-trunk"></div>
@@ -118,26 +159,15 @@
         </div>
       </section>
 
-      <!-- CONNECTIONS -->
-      <section id="connections" aria-labelledby="connections-title">
+      <!-- CONNECTIONS (demoted) -->
+      <section id="connections" aria-labelledby="connections-title" class="demoted-section">
         <div class="section-head">
           <h2 id="connections-title">Connected pairs</h2>
         </div>
         <p class="section-sub">
-          Play these in order when you can — sequels and spiritual follow-ups that reward continuity.
+          Sequels and spiritual follow-ups that reward continuity.
         </p>
         <div class="conn-grid" id="connections-grid"></div>
-      </section>
-
-      <!-- OPTIONAL -->
-      <section id="optional" aria-labelledby="optional-title">
-        <div class="section-head">
-          <h2 id="optional-title">Later / Optional</h2>
-        </div>
-        <p class="section-sub" id="optional-sub">
-          Worth knowing for completionists — not required for the Switch → Switch&nbsp;2 hero path.
-        </p>
-        <div class="game-grid" id="optional-grid"></div>
       </section>
     </main>
 
@@ -151,7 +181,7 @@
         Fan project by Anthony · Not affiliated with Nintendo.<br />
         The Legend of Zelda and related marks are trademarks of Nintendo.<br />
         Cover images via Wikimedia / Wikipedia for identification; progress saved in your browser
-        (<code>zelda-progression-v1</code>).
+        (<code>zelda-progression-v2</code>).
       </p>
     </footer>
 
