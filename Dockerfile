@@ -1,7 +1,7 @@
 # Static Zelda progression site for Railway
 FROM nginx:alpine
 
-COPY index.html styles.css app.js data.js /usr/share/nginx/html/
+COPY index.html styles.css styles-more.css app.js data.js data-games.js /usr/share/nginx/html/
 COPY docker-entrypoint.sh /docker-entrypoint-zelda.sh
 
 RUN chmod +x /docker-entrypoint-zelda.sh \
